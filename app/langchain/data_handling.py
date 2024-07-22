@@ -2,8 +2,14 @@ import pandas as pd
 import json
 import requests
 
-def parse_and_store_response(response: str, file_name: str = "response.csv") -> str:
+def parse_and_store_response(code: str, file_name: str = "response.csv") -> str:
     try:
+        # Run the code
+
+        #
+        response = {}
+        # store the response in response
+
         data = json.loads(response)
         df = pd.DataFrame(data)
         df.to_csv(file_name, index=False)
